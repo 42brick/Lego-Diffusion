@@ -591,7 +591,7 @@ if __name__ == "__main__":
     #           target: importpath
     #           params:
     #               key: value
-    os.environ["PL_TORCH_DISTRIBUTED_BACKEND"] = "gloo"
+    #os.environ["PL_TORCH_DISTRIBUTED_BACKEND"] = "gloo" #windows
     now = datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S")
 
     # add cwd for convenience and to make classes in this file available when
@@ -893,8 +893,10 @@ if __name__ == "__main__":
 
         import signal
 
-        signal.signal(signal.SIGTERM, melk)
-        signal.signal(signal.SIGTERM, divein)
+        signal.signal(signal.SIGUSR1, melk)
+        signal.signal(signal.SIGUSR2, divein)
+        #signal.signal(signal.SIGTERM, melk) #windows
+        #signal.signal(signal.SIGTERM, divein) #windows
 
         # run
         if opt.train:
