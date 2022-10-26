@@ -49,7 +49,7 @@ def main():
         outdir : image위치
         scale : float값 5.0 정도
         from_file : .txt (autocaption.py 이후 생성된 txt) 파일 위치
-        ckpt : 모델위치( last.ckpt)
+        ckpt : 모델위치( ~./last.ckpt)
         n_samples : 이미지 개수(1 ~4)
         seed : 적당히(int)
     '''
