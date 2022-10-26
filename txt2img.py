@@ -45,18 +45,15 @@ def load_model_from_config(config, ckpt, verbose=False):
 
 def main():
     '''
-    required :
-        prompt, outdir, scale, from_file, config, ckpt, n_samples, seed
+    required-----------------------------
+        outdir : image위치
+        scale : float값 5.0 정도
+        from_file : .txt (autocaption.py 이후 생성된 txt) 파일 위치
+        ckpt : 모델위치( last.ckpt)
+        n_samples : 이미지 개수(1 ~4)
+        seed : 적당히(int)
     '''
     parser = argparse.ArgumentParser()
-
-    parser.add_argument(
-        "--prompt",
-        type=str,
-        nargs="?",
-        default="a painting of a virus monster playing guitar",
-        help="the prompt to render"
-    )
 
     parser.add_argument(
         "--outdir",
@@ -129,7 +126,7 @@ def main():
     parser.add_argument(
         "--config",
         type=str,
-        default="logs/f8-kl-clip-encoder-256x256-run1/configs/2022-06-01T22-11-40-project.yaml",
+        default="configs/stable-diffusion/lego_face_final.yaml",
         help="path to config which constructs model",
     )
     parser.add_argument(
