@@ -591,7 +591,7 @@ if __name__ == "__main__":
     #           target: importpath
     #           params:
     #               key: value
-    #os.environ["PL_TORCH_DISTRIBUTED_BACKEND"] = "gloo" #windows
+
     now = datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S")
 
     # add cwd for convenience and to make classes in this file available when
@@ -855,8 +855,7 @@ if __name__ == "__main__":
         # configure learning rate
         bs, base_lr = config.data.params.batch_size, config.model.base_learning_rate
         if not cpu:
-            #ngpu = len(lightning_config.trainer.gpus.strip(",").split(','))
-            ngpu = 1
+            ngpu = len(lightning_config.trainer.gpus.strip(",").split(','))
         else:
             ngpu = 1
         if 'accumulate_grad_batches' in lightning_config.trainer:
@@ -895,8 +894,6 @@ if __name__ == "__main__":
 
         signal.signal(signal.SIGUSR1, melk)
         signal.signal(signal.SIGUSR2, divein)
-        #signal.signal(signal.SIGTERM, melk) #windows
-        #signal.signal(signal.SIGTERM, divein) #windows
 
         # run
         if opt.train:
