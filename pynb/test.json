@@ -1,0 +1,45 @@
+{
+  "lego_hand_make": {
+    "description": "",
+    "citation": "",
+    "homepage": "",
+    "license": "",
+    "features": {
+      "image": {
+        "decode": true,
+        "id": null,
+        "_type": "Image"
+      },
+      "text": {
+        "dtype": "string",
+        "id": null,
+        "_type": "Value"
+      }
+    },
+    "post_processed": null,
+    "supervised_keys": null,
+    "task_templates": null,
+    "builder_name": "imagefolder",
+    "config_name": "HoneyTylenol--lego_hand_make",
+    "version": {
+      "version_str": "0.0.0",
+      "description": null,
+      "major": 0,
+      "minor": 0,
+      "patch": 0
+    },
+    "splits": {
+      "train": {
+        "name": "train",
+        "num_bytes": 1005389.0,
+        "num_examples": 100,
+        "dataset_name": "lego_hand_make"
+      }
+    },
+    "download_checksums": null,
+    "download_size": 989617,
+    "post_processing_size": null,
+    "dataset_size": 1005389.0,
+    "size_in_bytes": 1995006.0
+  }
+}

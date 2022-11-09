@@ -13,3 +13,5 @@ src/
 logs
 .vscode/
 im-examples/
+pynb/ghibli/*
+*.parquet
